@@ -1,0 +1,176 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Salida</title>
+    <link rel="stylesheet" href="{% static 'css/orden_salida.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css">
+</head>
+<header>
+    {% include 'index.html' %}
+</header>
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="message">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="container">
+        <h1>Orden de Salida</h1>
+        <form method="post" class="form">
+            {% csrf_token %}
+            <label for="nombre_de_articulo">Nombre de Artículo:</label>
+            {{ form.nombre_de_articulo }}<br>
+            <label for="numero_orden">Número de Orden:</label>
+            {{ form.numero_orden }}<br>
+            <label for="unidad">Unidad:</label>
+            {{ form.unidad }}<br>
+            <label for="cantidad">Cantidad:</label>
+            {{ form.cantidad }}<br>
+            <button type="submit">Crear Orden</button>
+        </form>
+        <h2>Historial de Órdenes de Salida</h2>
+        <!-- Formulario de búsqueda -->
+        <form class="form-bus" method="GET" action="">
+            <input type="text" name="q" placeholder="Buscar..." value="{{ request.GET.q }}">
+            <button type="submit">Buscar</button>
+        </form>
+        <table class="entradas-table">
+            <thead>
+                <tr>
+                    <th>Nombre de Artículo</th>
+                    <th>Número de Orden</th>
+                    <th>Unidad</th>
+                    <th>Cantidad</th>
+                    <th>Fecha y Hora</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for orden in ordenes_salida %}
+                <tr>
+                    <td>{{ orden.nombre_de_articulo }}</td>
+                    <td>{{ orden.numero_orden }}</td>
+                    <td>{{ orden.unidad }}</td>
+                    <td>{{ orden.cantidad }}</td>
+                    <td>{{ orden.fecha_y_hora }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5">No hay órdenes de salida registradas.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- BotUI Container -->
+    <div class="botui-app-container" id="botui-app">
+        <bot-ui></bot-ui>
+        <div class="back-button" id="back-button">&larr;</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.min.js"></script>
+    <script>
+        var botui = new BotUI('botui-app');
+
+        function showInitialMessage() {
+            botui.message.bot({
+                delay: 1000,
+                content: 'Hola, soy el asistente virtual. ¿En qué puedo ayudarte?'
+            }).then(function () {
+                return botui.action.button({
+                    delay: 1000,
+                    action: [
+                        { text: '¿Qué es esta página?', value: 'info' },
+                        { text: '¿Cómo puedo hacer una orden de salida?', value: 'add_item' },
+                        { text: 'Contactar soporte', value: 'contact' }
+                    ]
+                });
+            }).then(handleResponse);
+        }
+
+        function handleResponse(res) {
+            document.getElementById('back-button').style.display = 'block'; // Muestra el botón de regreso
+            if (res.value === 'info') {
+                botui.message.bot({
+                    delay: 1000,
+                    content: 'Esta es la página de orden de salida donde puedes registrar nuevas órdenes de salida de articulos.'
+                });
+            } else if (res.value === 'add_item') {
+                botui.message.bot({
+                    delay: 1000,
+                    content: 'Para hacer una orden, completa el formulario y haz clic en "Crear Orden".'
+                });
+            } else if (res.value === 'contact') {
+                botui.message.bot({
+                    delay: 1000,
+                    content: 'Para contactar con soporte, envía un correo a soporte@example.com'
+                });
+            }
+        }
+
+        document.getElementById('back-button').addEventListener('click', function () {
+            botui.message.removeAll(); // Elimina todos los mensajes
+            showInitialMessage(); // Muestra el mensaje inicial nuevamente
+            this.style.display = 'none'; // Oculta el botón de regreso
+        });
+
+        showInitialMessage();
+        // Scroll to top after page load
+        window.onload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
+
+    <style>
+        .botui-app-container {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 200px;
+            /* Aumenta el ancho del contenedor */
+            height: 400px;
+            /* Altura del contenedor */
+            overflow-y: auto;
+            /* Agrega desplazamiento vertical si el contenido supera la altura */
+            border-radius: 15px;
+            margin: -5px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .botui-actions-buttons {
+            width: 50%;
+            /* Ajusta el ancho de los botones */
+            position: fixed;
+            align-items: center;
+            /* Centra los botones en el contenedor */
+        }
+
+        .back-button {
+            display: none;
+            /* Oculta el botón de regreso inicialmente */
+            width: 50px;
+            height: 50px;
+            background-color: #4c535a;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+
+
+</body>
+
+</html>

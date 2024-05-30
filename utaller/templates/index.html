@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Principal</title>
+  <link rel="stylesheet" href="{% static 'css/Index.css' %}">
+</head>
+<header>
+
+  {% include 'header.html' %}
+
+</header>
+<body>
+  <nav class="tablero">
+    <ul>
+      <a href="/gestionex">Inventario</a>
+    </ul>
+
+      <!-- 
+    <ul>
+      <a href="/reportes"> Reportes</a>
+    </ul>
+      -->
+
+    <ul>
+      <a href="/entrada">Entrada articulos</a>
+    </ul>
+
+    <ul>
+      <a href="/salida">Salida articulos</a>
+    </ul>
+
+    <ul>
+      <a href="/orden_salida">Oedenes de Salida</a>
+    </ul>
+
+    <ul>
+      <a href="/facturas">Reportes</a>
+    </ul>
+  </nav>
+</body>
+</html>

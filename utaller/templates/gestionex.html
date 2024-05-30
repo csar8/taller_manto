@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario</title>
+    <link rel="stylesheet" href="{% static 'css/gestionex.css' %}">
+</head>
+<header>
+    {% include 'index.html' %}
+</header>
+<body>
+    <div class="container">
+        <h1>Inventario Actual</h1>
+        <!-- Formulario de búsqueda -->
+        <form method="GET" action="">
+            <input type="text" name="q" placeholder="Buscar..." value="{{ request.GET.q }}">
+            <button type="submit">Buscar</button>
+        </form>
+        <table class="inventario-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Unidad de Medida</th>
+                    <th>Cantidad Disponible</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in inventario %}
+                <tr>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.get_categoria_display }}</td>
+                    <td>{{ item.get_unidad_de_medida_display }}</td>
+                    <td>{{ item.cantidad_disponible }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente del texto en Arial o una fuente sans-serif genérica */
+    margin: 120px 0 0; /* Elimina el margen exterior del cuerpo del documento */
+    padding: 0; /* Elimina el relleno interior del cuerpo del documento */
+    background-color: rgba(244, 244, 244, 0.8); /* Establece el color de fondo del cuerpo del documento con una transparencia del 80% */
+    background-image: url('../img/img1.png'); /* Establece la imagen de fondo */
+    background-size: auto; /* Escala la imagen para que cubra todo el fondo */
+    background-position:center; /* Centra la imagen de fondo */
+}
+
+h1 {
+    text-align: center; /* Centra el texto dentro del elemento h1 */
+    margin-top: 50px; /* Agrega un margen superior de 50px al elemento h1 */
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Agrega una sombra de texto para mejorar la legibilidad */
+}
+
+form {
+    max-width: 400px; /* Establece el ancho máximo del formulario en 400px */
+    margin: 0 auto; /* Centra el formulario horizontalmente dentro de su contenedor */
+    padding: 20px; /* Agrega relleno interior de 20px al formulario */
+    background-color: rgba(255, 255, 255, 0.9); /* Establece el color de fondo del formulario en blanco con una transparencia del 90% */
+    border-radius: 5px; /* Agrega bordes redondeados al formulario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agrega una sombra alrededor del formulario */
+}
+
+label {
+    display: block; /* Hace que las etiquetas sean bloques, ocupando toda la anchura disponible */
+    margin-bottom: 5px; /* Agrega un margen inferior de 5px a las etiquetas */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Establece el ancho de los campos de entrada de texto al 100% del contenedor */
+    padding: 10px; /* Agrega relleno interior de 10px a los campos de entrada de texto */
+    margin-bottom: 15px; /* Agrega un margen inferior de 15px a los campos de entrada de texto */
+    border: 1px solid rgba(90, 78, 78, 0.733); /* Establece un borde de 1px sólido con un color */
+    border-radius: 5px; /* Agrega bordes redondeados a los campos de entrada de texto */
+    box-sizing: border-box; /* Hace que el tamaño total del campo incluya el borde y el relleno */
+}
+
+.buttons {
+    display: flex; /* Utilizamos flexbox para alinear los botones */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos de manera uniforme */
+}
+
+button[type="submit"],
+a.registro-btn,
+a.admin-btn { 
+    width: calc(100% - 5px); /* Establece el ancho del botón de envío y el botón de registro al 50% del contenedor, con un margen de 5px */
+    padding: 10px; /* Agrega relleno interior de 10px al botón de envío y al botón de registro */
+    margin-right: 5px; /* Agrega un margen derecho de 5px para separar los botones */
+    background-color: rgba(1, 0, 54, 0.8); /* Establece el color de fondo del botón de envío con una transparencia del 80% */
+    color: #fff; /* Establece el color del texto del botón de envío en blanco */
+    border: none; /* Elimina el borde del botón de envío */
+    border-radius: 5px; /* Agrega bordes redondeados al botón de envío */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón de envío */
+    text-decoration: none; /* Elimina la subrayado del enlace */
+    display: inline-block; /* Hace que el botón de registro se comporte como un elemento de bloque, permitiendo el ancho y el margen */
+    text-align: center; /* Centra el texto dentro del botón de registro */
+    box-sizing: border-box; /* Hace que el tamaño total del botón incluya el borde y el relleno */
+    font-size: 16px; /* Establece el tamaño del texto del botón */
+}
+
+button[type="submit"]:hover,
+a.registro-btn:hover,
+a.admin-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Cambia el color de fondo del botón de envío y el botón de registro al pasar sobre ellos con una transparencia del 80% */
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px auto; /* Centrar el contenedor de mensajes */
+    max-width: 300px; /* Ancho máximo del contenedor de mensajes */
+    background-color: #ffcccc; /* Color de fondo para mensajes de error */
+    border-color: #ff6666; /* Color del borde para mensajes de error */
+    color: #ff0000; /* Color del texto para mensajes de error */
+}
+
+.message {
+    background-color: #f0f0f0; /* Color de fondo del mensaje */
+    color: #333; /* Color del texto del mensaje */
+    border: 1px solid #3f3d3d; /* Borde del mensaje */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center; /* Centrar el texto del mensaje */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    background-color: #ffcccc; /* Color de fondo para mensajes de error */
+    border-color: #ff6666; /* Color del borde para mensajes de error */
+    color: #ff0000; /* Color del texto para mensajes de error */
+}

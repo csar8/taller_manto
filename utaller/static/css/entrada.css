@@ -1,0 +1,178 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.container {
+    max-width: 800px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+}
+h1::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 4px;
+    background-color: #e74c3c;
+}
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+}
+h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background-color: #6044ad;
+}
+form {
+    margin-bottom: 20px;
+}
+/* Estilos para el formulario de búsqueda */
+.form-bus {
+    display: flex;
+    justify-content: right;
+    /* Alinear a la derecha */
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+
+.form-bus input[type="text"] {
+    padding: 0px;
+    /*  ancho de buscador  */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    height: 30px;
+    margin-right: 5px;
+    /* Margin izquierdo para separar del input */
+    text-align: center;
+}
+
+.form-bus button {
+    padding: 5px;
+    /* Ajuste de padding */
+    background-color: #343435;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 30px;
+    /* Ajusta la altura del botón */
+    margin: 1px;
+    width: 70px;
+    /* Ajusta el ancho del botón */
+}
+
+.form-bus button:hover {
+    background-color: #000000;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    display: block;
+    width: 20%;
+    padding: 10px;
+    background-color: #343435;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: -5px auto;
+    /* centra el botón */
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+/* Estilos para la tabla */
+.entradas-table,
+.salidas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    background-color: #fff;
+}
+
+.entradas-table thead,
+.salidas-table thead {
+    background-color: #343435;
+    color: #ffffff;
+}
+
+.entradas-table th,
+.entradas-table td,
+.salidas-table th,
+.salidas-table td {
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px auto;
+    max-width: 280px;
+    background-color: #ffcccc;
+    border-color: #ff6666;
+    color: #ff0000;
+}
+
+.message {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    background-color: #ffcccc;
+    border-color: #ff6666;
+    color: #ff0000;
+}
+
+

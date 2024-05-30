@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(244, 244, 244, 0.8);
+    background-image: url('../img/img1.png'); 
+    background-size: auto; 
+    background-position:center; 
+
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);    
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 10px auto; /* Centrar el contenedor de mensajes */
+    max-width: 300px; /* Ancho máximo del contenedor de mensajes */
+    background-color: #ffcccc; /* Color de fondo para mensajes de error */
+    border-color: #ff6666; /* Color del borde para mensajes de error */
+    color: #ff0000; /* Color del texto para mensajes de error */
+}
+
+.message {
+    background-color: #f0f0f0; /* Color de fondo del mensaje */
+    color: #333; /* Color del texto del mensaje */
+    border: 1px solid #ccc; /* Borde del mensaje */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center; /* Centrar el texto del mensaje */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    background-color: #ffcccc; /* Color de fondo para mensajes de error */
+    border-color: #ff6666; /* Color del borde para mensajes de error */
+    color: #ff0000; /* Color del texto para mensajes de error */
+}
+
+
+input[type="submit"]
+{
+    width: calc(100% - 5px); /* Establece el ancho del botón de envío y el botón de registro al 50% del contenedor, con un margen de 5px */
+    padding: 10px; /* Agrega relleno interior de 10px al botón de envío y al botón de registro */
+    margin-right: 5px; /* Agrega un margen derecho de 5px para separar los botones */
+    background-color: rgba(1, 0, 48, 0.8); /* Establece el color de fondo del botón de envío con una transparencia del 80% */
+    color: #fff; /* Establece el color del texto del botón de envío en blanco */
+    border: none; /* Elimina el borde del botón de envío */
+    border-radius: 5px; /* Agrega bordes redondeados al botón de envío */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón de envío */
+    text-decoration: none; /* Elimina la subrayado del enlace */
+    display: inline-block; /* Hace que el botón de registro se comporte como un elemento de bloque, permitiendo el ancho y el margen */
+    text-align: center; /* Centra el texto dentro del botón de registro */
+    box-sizing: border-box; /* Hace que el tamaño total del botón incluya el borde y el relleno */
+    font-size: 16px; /* Establece el tamaño del texto del botón */
+    margin: -11px 4px;
+    
+}
+
+
+input[type="submit"]:hover{
+    background-color:rgb(0, 0, 0);
+}

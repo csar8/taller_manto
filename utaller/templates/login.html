@@ -1,0 +1,46 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Inicio Sesión</title>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <h1>Iniciar Sesión</h1>
+    <!-- Mensajes de error -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="message">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <!-- Formulario de inicio de sesión -->
+    <form method="post">
+        {% csrf_token %} <!-- Token CSRF para protección contra ataques de falsificación de solicitudes entre sitios -->
+
+        <!-- Campo de nombre de usuario -->
+        <div>
+            <label for="nombre_de_usuario">Nombre de Usuario:</label>
+            <input type="text" id="nombre_de_usuario" name="nombre_de_usuario" required> <!-- Campo de entrada de texto para el nombre de usuario -->
+        </div>
+        <!-- Campo de contraseña -->
+        <div>
+            <label for="contraseña">Contraseña: </label>
+            <input type="password" id="contraseña" name="contraseña" required> <!-- Campo de entrada de texto para la contraseña -->
+        </div>
+        <!-- Botón de envío del formulario -->
+        <div class="buttons">
+        <button type="submit">Iniciar sesión</button>
+        <a href="{% url 'registro' %}" class="registro-btn">Registro</a> <!-- Enlace para ir a la página de registro -->
+        <a href="/admin/login/" class="admin-btn">Administrador</a> <!-- Enlace para ir a la página de inicio de sesión del administrador -->
+        </div>
+    </form>
+</body>
+</html>
+

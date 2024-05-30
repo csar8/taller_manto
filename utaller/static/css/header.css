@@ -1,0 +1,70 @@
+body {
+    margin: 0; /* Ajustar el margen a 0 para evitar espacios innecesarios */
+    overflow-x: hidden; /* Ocultar la barra de desplazamiento horizontal */
+}
+
+.header {
+    position: relative;
+    height: 52px;
+    overflow: hidden;
+}
+
+.header::before {
+    content: ""; /* Crear una capa pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/aaa.png');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain; /* Ajustar la imagen al tamaño del contenedor */
+    opacity: 1;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute; /* Cambiar a posición absoluta */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/b4.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Ajustar la imagen al tamaño del contenedor */
+    z-index: 0; /* Colocar detrás de otros elementos */
+}
+
+.second-overlay {
+    position: absolute; /* Cambiar a posición absoluta */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/logo.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain; /* Ajustar la imagen al tamaño del contenedor */
+    z-index: 2; /* Colocar delante de otros elementos */
+}
+
+.second-overlay img {
+    opacity: 0;
+}
+
+.cerrar {
+    position: absolute; /* Cambiar a posición fija */
+    top: 0;
+    right: 0;
+    width: auto;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    padding: 6px 5px;
+    margin-right: 60px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: #3b3232;
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,22 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <title>Pagina sec</title>
+</head>
+<body>
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="second-overlay">
+            <a href="https://www.coatzacoalcos.gob.mx/" target="_blank">
+                <!-- Enlace externo solo para la imagen logo.png -->
+                <img src="{% static 'img/logo.png' %}" alt="Logo"> <!-- Imagen logo.png -->
+            </a>
+            <a href="/login" class="cerrar">Cerrar Sesión</a>
+        </div>
+    </header>
+</body>
+</html>
